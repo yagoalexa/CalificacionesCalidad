@@ -1,0 +1,11 @@
+body{
+    background-color: #F4F4F4;
+}
+
+.pregunta{
+    color: var(--color-font-principal);
+}
+
+:root {
+    --color-font-principal: #045494;
+}
