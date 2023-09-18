@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap');
 body{
+    font-family: 'Mulish', sans-serif;
     background-color: #F4F4F4;
+    color: var(--color-font-principal);
 }
+
+.encabezado > .row > div {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.titulo > .row > div:last-child{
+    color: black;
+}
+.titulo > .row > div:first-child{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
 
 .pregunta{
     color: var(--color-font-principal);
