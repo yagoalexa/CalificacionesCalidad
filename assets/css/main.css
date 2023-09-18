@@ -1,27 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap');
-body{
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&display=swap');
+
+body {
     font-family: 'Mulish', sans-serif;
     background-color: #F4F4F4;
     color: var(--color-font-principal);
 }
 
-.encabezado > .row > div {
+.encabezado>.row>div {
     font-size: 1.5em;
     font-weight: 700;
 }
 
-.titulo > .row > div:last-child{
+.titulo>.row>div:last-child {
     color: black;
 }
-.titulo > .row > div:first-child{
+
+.titulo>.row>div:first-child {
     font-size: 1.2em;
     font-weight: 700;
 }
 
 
-.pregunta{
+.pregunta {
+    background-color: #FFFFFF;
     color: var(--color-font-principal);
 }
+
+.pregunta>.row:first-child>div>p {
+    font-weight: 600;
+}
+
+
+/* Estilo para las estrellas */
+.star-rating {
+    font-size: 0;
+    white-space: nowrap;
+    display: inline-block;
+    width: 150px; /* Cambia el ancho según tus necesidades */
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 24px; /* Cambia el tamaño de las estrellas según tus necesidades */
+    cursor: pointer;
+    padding: 5px;
+    float: right;
+}
+
+.star-rating label:before {
+    content: "\2605"; /* Código Unicode para una estrella vacía */
+}
+
+.star-rating input[type="radio"]:checked ~ label:before {
+    content: "\2605"; /* Código Unicode para una estrella llena */
+    color: gold; /* Cambia el color de las estrellas llenas según tus preferencias */
+}
+
 
 :root {
     --color-font-principal: #045494;
