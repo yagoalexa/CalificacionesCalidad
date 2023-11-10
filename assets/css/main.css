@@ -36,7 +36,7 @@ body {
     font-size: 0;
     white-space: nowrap;
     display: inline-block;
-    width: 150px; /* Cambia el ancho según tus necesidades */
+    width: 180px; /* Cambia el ancho según tus necesidades */
 }
 
 .star-rating input[type="radio"] {
