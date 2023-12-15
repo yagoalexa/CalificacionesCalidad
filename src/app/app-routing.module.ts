@@ -15,7 +15,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'finalizacion-encuesta',
+    path: 'finencuesta',
     component: FinEncuestaComponent,
     canActivate: [AuthGuard],
   },

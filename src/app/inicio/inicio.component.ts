@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-inicio',
@@ -9,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
+  constructor(private router: Router) { }
+  LanzarEncuesta(){
+    this.router.navigate(['/encuesta']);
+  }
 }
