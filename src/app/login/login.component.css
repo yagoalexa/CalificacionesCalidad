@@ -1,9 +1,12 @@
-body {
-    background-image: url('https://simitdelosandes.com.co/images/bg/slider-bg-1.jpg');
+.login-main {
+    background-image: url('https://simitdelosandes.com.co/images/bg/slider-bg-1.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100%;
+    height: 100vh; /* 100% de la altura del viewport */
 }
+
 .login-container {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo con transparencia */
     border-radius: 10px;
