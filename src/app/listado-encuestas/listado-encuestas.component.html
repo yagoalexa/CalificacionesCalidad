@@ -1,0 +1,49 @@
+<div class="main-encuesta">
+  <div class="container">
+    <section class="encabezado">
+      <div class="row mt-5">
+        <div class="d-none d-xs-none d-sm-none d-md-none d-lg-block col-lg-2">
+          <img
+            src="./assets/img/logo.png"
+            alt="Simit de los Andes"
+            width="200"
+            srcset="./assets/img/logo2.png"
+          />
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 my-auto">
+            <h2 class="text-center">Listado de Encuestas</h2>
+        </div>
+        <a (click)="FinSesion()" routerLinkActive="router-link-active" class="btn btn-primary">Cerrar sesión</a>
+      </div>
+    </section>
+    <section class="titulo">
+      <div class="container mt-4">
+        
+        <table class="table table-bordered mt-3">
+          <thead>
+            <tr>
+              <th>Pregunta 1</th>
+              <th>Pregunta 2</th>
+              <th>Pregunta 3</th>
+              <th>Comentarios</th>
+              <th>Pas</th>
+              <th>Promedio</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let encuesta of listadoEncuestas">
+              <td>{{ encuesta.pregunta1 }}</td>
+              <td>{{ encuesta.pregunta2 }}</td>
+              <td>{{ encuesta.pregunta3 }}</td>
+              <td>{{ encuesta.comentarios }}</td>
+              <td>{{ encuesta.pas }}</td>
+              <td>{{ encuesta.promedio }}</td>
+              <td>{{ encuesta.fecha | date:'dd MMM yyyy HH:mm' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

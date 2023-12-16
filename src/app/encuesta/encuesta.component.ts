@@ -24,21 +24,21 @@ export class EncuestaComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.encuestaForm = this.fb.group({
-      pregunta1: ['', Validators.required],
-      pregunta2: ['', Validators.required],
-      pregunta3: ['', Validators.required],
+      pregunta1: [, Validators.required],
+      pregunta2: [, Validators.required],
+      pregunta3: [, Validators.required],
       comentario: [''],
     });
   }
-  onSubmit() {
+  async onSubmit() {
     const { pregunta1, pregunta2, pregunta3, comentario } =
       this.encuestaForm.value;
     console.log('Encuesta enviada:', this.encuestaForm.value);
     if (
-      this.encuestaService.enviarEncuesta(
-        pregunta1,
-        pregunta2,
-        pregunta3,
+      await this.encuestaService.EnviarEncuesta(
+        +pregunta1,
+        +pregunta2,
+        +pregunta3,
         comentario
       )
     )

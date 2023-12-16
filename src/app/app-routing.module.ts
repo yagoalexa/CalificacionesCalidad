@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { FinEncuestaComponent } from './fin-encuesta/fin-encuesta.component';
 import { AuthGuard } from './auth.guard';
+import { ListadoEncuestasComponent } from './listado-encuestas/listado-encuestas.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: 'encuesta',
     component: EncuestaComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'encuestas',
+    component: ListadoEncuestasComponent,
     canActivate: [AuthGuard],
   },
   {

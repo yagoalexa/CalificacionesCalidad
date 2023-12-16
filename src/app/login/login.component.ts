@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   mostrarPassword = false;
+  mensaje: string = '';
   toggleMostrarPassword() {
     this.mostrarPassword = !this.mostrarPassword;
   }
@@ -43,6 +44,13 @@ export class LoginComponent implements OnInit {
   Login(): void {
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password);
-    if (this.authService.isLoggedIn()) this.router.navigate(['/encuesta']);
+    this.authService.isLoggedIn().subscribe((valor) => {
+      if (valor && email == 'adriana.rivera@simitdelosandes.com.co')
+        this.router.navigate(['/encuestas']);
+      else if (valor) {
+        this.router.navigate(['/encuesta']);
+      }
+      else this.mensaje = 'Error al ingresar';
+    });
   }
 }
