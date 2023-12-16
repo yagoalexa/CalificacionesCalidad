@@ -1,0 +1,19 @@
+.main-encuesta {
+    font-family: 'Mulish', sans-serif;
+    color: #045494;
+}
+
+:host {
+    background-color: #F4F4F4;
+    height: 100%; /* Establece la altura al 100% del viewport */
+    margin: 0;     /* Elimina cualquier margen predeterminado */
+    padding: 0;    /* Elimina cualquier relleno predeterminado */
+    display: flex; /* Otras opciones para ajustar el diseño según tus necesidades */
+    align-items: center;
+    justify-content: center;
+  }
+
+.encabezado>.row>div {
+    font-size: 1.5em;
+    font-weight: 700;
+}
