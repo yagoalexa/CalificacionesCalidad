@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EncuestaService } from '../encuesta.service';
 
 @Component({
   selector: 'app-encuesta',
@@ -16,7 +17,11 @@ import { Router } from '@angular/router';
 })
 export class EncuestaComponent implements OnInit {
   encuestaForm!: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private encuestaService: EncuestaService
+  ) {}
   ngOnInit(): void {
     this.encuestaForm = this.fb.group({
       pregunta1: ['', Validators.required],
@@ -29,6 +34,14 @@ export class EncuestaComponent implements OnInit {
     const { pregunta1, pregunta2, pregunta3, comentario } =
       this.encuestaForm.value;
     console.log('Encuesta enviada:', this.encuestaForm.value);
-    this.router.navigate(['/finencuesta']);
+    if (
+      this.encuestaService.enviarEncuesta(
+        pregunta1,
+        pregunta2,
+        pregunta3,
+        comentario
+      )
+    )
+      this.router.navigate(['/finencuesta']);
   }
 }
