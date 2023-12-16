@@ -1,0 +1,27 @@
+<div class="login-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 login-container">
+                <h2 class="text-center">Inicio de Sesión</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="Login()">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" formControlName="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <div class="input-group">
+                            <input [type]="mostrarPassword ? 'text' : 'password'" class="form-control" id="password" placeholder="Ingresa tu contraseña" formControlName="password" required>
+                            <button class="btn btn-outline-secondary" type="button" id="show-password" (click)="toggleMostrarPassword()">  {{ mostrarPassword ? 'Ocultar' : 'Mostrar' }}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <!-- <button type="submit" class="btn btn-primary">Iniciar Sesión</button> -->
+                        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
