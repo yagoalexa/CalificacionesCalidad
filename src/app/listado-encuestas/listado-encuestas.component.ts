@@ -4,6 +4,7 @@ import { Encuesta } from '../modelo/encuesta';
 import { CommonModule, DatePipe } from '@angular/common';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { ExcelService } from '../excel.service';
 
 @Component({
   selector: 'app-listado-encuestas',
@@ -17,7 +18,8 @@ export class ListadoEncuestasComponent implements OnInit {
   constructor(
     private encuestaService: EncuestaService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private excelExport: ExcelService
   ) {}
   ngOnInit(): void {
     this.encuestaService.ObtenerEncuestas().then((valor)=>{
@@ -32,5 +34,7 @@ export class ListadoEncuestasComponent implements OnInit {
       }
     });
   }
-  Export(){}
+  Export(){
+    this.excelExport.exportToExcel(this.listadoEncuestas);
+  }
 }

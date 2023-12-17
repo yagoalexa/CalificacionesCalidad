@@ -11,38 +11,58 @@
           />
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 my-auto">
-            <h2 class="text-center">Listado de Encuestas</h2>
+          <h2 class="text-center">Listado de Encuestas</h2>
         </div>
-        <a (click)="FinSesion()" routerLinkActive="router-link-active" class="btn btn-primary">Cerrar sesión</a>
+        <div class="row">
+          <div class="col">
+            <a
+              (click)="Export()"
+              routerLinkActive="router-link-active"
+              class="btn btn-primary"
+              >Descargar Excel</a
+            >
+          </div>
+          <div class="col position-relative">
+            <a
+              (click)="FinSesion()"
+              routerLinkActive="router-link-active"
+              class="btn btn-primary position-absolute top-0 end-0"
+              >Cerrar sesión</a
+            >
+          </div>
+        </div>
       </div>
     </section>
     <section class="titulo">
       <div class="container mt-4">
-        
-        <table class="table table-bordered mt-3">
-          <thead>
-            <tr>
-              <th>Pregunta 1</th>
-              <th>Pregunta 2</th>
-              <th>Pregunta 3</th>
-              <th>Comentarios</th>
-              <th>Pas</th>
-              <th>Promedio</th>
-              <th>Fecha</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let encuesta of listadoEncuestas">
-              <td>{{ encuesta.pregunta1 }}</td>
-              <td>{{ encuesta.pregunta2 }}</td>
-              <td>{{ encuesta.pregunta3 }}</td>
-              <td>{{ encuesta.comentarios }}</td>
-              <td>{{ encuesta.pas }}</td>
-              <td>{{ encuesta.promedio }}</td>
-              <td>{{ encuesta.fecha | date:'dd MMM yyyy HH:mm' }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col">
+            <table class="table table-bordered mt-3">
+              <thead>
+                <tr>
+                  <th>Pregunta 1</th>
+                  <th>Pregunta 2</th>
+                  <th>Pregunta 3</th>
+                  <th>Comentarios</th>
+                  <th>Pas</th>
+                  <th>Promedio</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let encuesta of listadoEncuestas">
+                  <td>{{ encuesta.pregunta1 }}</td>
+                  <td>{{ encuesta.pregunta2 }}</td>
+                  <td>{{ encuesta.pregunta3 }}</td>
+                  <td>{{ encuesta.comentarios }}</td>
+                  <td>{{ encuesta.pas }}</td>
+                  <td>{{ encuesta.promedio }}</td>
+                  <td>{{ encuesta.fecha | date : "dd MMM yyyy HH:mm" }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   </div>
