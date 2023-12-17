@@ -32,4 +32,5 @@ export class ListadoEncuestasComponent implements OnInit {
       }
     });
   }
+  Export(){}
 }
