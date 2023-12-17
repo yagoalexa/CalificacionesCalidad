@@ -19,6 +19,10 @@
                     <div class="d-grid">
                         <!-- <button type="submit" class="btn btn-primary">Iniciar Sesión</button> -->
                         <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+                        <div *ngIf="mensaje">
+                            <p class="text-danger">{{mensaje}}</p>
+                        </div>
+                        
                     </div>
                 </form>
             </div>

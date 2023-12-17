@@ -7,11 +7,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -45,12 +46,19 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password);
     this.authService.isLoggedIn().subscribe((valor) => {
-      if (valor && email == 'adriana.rivera@simitdelosandes.com.co')
+      if (
+        valor &&
+        email == 'admin@simitdelosandes.com.co' &&
+        password == 'pruebaAdmin'
+      )
         this.router.navigate(['/encuestas']);
-      else if (valor) {
+      if (
+        valor &&
+        email == 'test@simitdelosandes.com.co' &&
+        password == 'pruebaTest'
+      )
         this.router.navigate(['/encuesta']);
-      }
-      else this.mensaje = 'Error al ingresar';
+      else this.mensaje = 'Coroeo y contraseña incorrectos.';
     });
   }
 }
