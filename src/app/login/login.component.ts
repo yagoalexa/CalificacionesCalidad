@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         password == 'pruebaTest'
       )
         this.router.navigate(['/encuesta']);
-      else this.mensaje = 'Coroeo y contraseña incorrectos.';
+      else this.mensaje = '¡Correo y contraseña incorrectos!';
     });
   }
 }
